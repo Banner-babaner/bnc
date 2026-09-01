@@ -1,0 +1,9 @@
+spring:
+  redis:
+    timeout=60000
+  jpa:
+    hibernate:
+      ddl-auto:validate
+minio:
+  bucket:
+    name:images
