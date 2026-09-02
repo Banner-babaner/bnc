@@ -7,6 +7,12 @@ spring:
   liquibase:
     change-log=classpath:db/changelog/db.changelog-master.yaml
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env,loggers
+
 minio:
   bucket:
     name:images

@@ -1,3 +1,7 @@
 databaseChangeLog:
-#  - include:
-#      file: db/changelog/migrations/...
+  - include:
+      file: db/changelog/migrations/001_image_info_create_table.sql
+  - include:
+      file: db/changelog/migrations/002_event_create_table.sql
+  - include:
+      file: db/changelog/migrations/003_category_create_table.sql
