@@ -5,3 +5,5 @@ databaseChangeLog:
       file: db/changelog/migrations/002_event_create_table.sql
   - include:
       file: db/changelog/migrations/003_category_create_table.sql
+  - include:
+      file: db/changelog/migrations/004_item_create_table.sql

@@ -17,7 +17,11 @@ services:
 
 
   db:
-    image: postgres:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    volumes:
+      - pg_data:/var/lib/postgresql
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
@@ -75,3 +79,4 @@ volumes:
   minio-data:
 #  elasticsearch-data:
 #    driver: local
+  pg_data:

@@ -1,0 +1,35 @@
+FROM postgres:18
+
+RUN apt-get update && apt-get install -y \
+    git \
+    build-essential \
+    curl \
+    pkg-config \
+    libssl-dev \
+    clang \
+    postgresql-server-dev-18 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+
+RUN cargo install cargo-pgrx --version 0.19.2
+
+RUN echo "=== Checking headers after installing dev package ===" && \
+    ls -la /usr/include/postgresql/18/ && \
+    ls -la /usr/include/postgresql/18/server/
+
+RUN cargo pgrx init --pg18 $(which pg_config)
+
+RUN git clone https://github.com/supabase/pg_jsonschema.git /tmp/pg_jsonschema
+
+WORKDIR /tmp/pg_jsonschema
+
+RUN cargo pgrx install --release --pg-config /usr/bin/pg_config
+
+#RUN rm -rf /tmp/pg_jsonschema && \
+#    cargo uninstall cargo-pgrx && \
+#    rm -rf /root/.cargo
+
+WORKDIR /
