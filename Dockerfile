@@ -4,6 +4,8 @@ WORKDIR /build
 
 COPY --chmod=0755 mvnw mvnw
 COPY .mvn/ .mvn/
+RUN sed -i 's/\r$//' mvnw
+#Widndows CRLF --> LF
 
 COPY pom.xml .
 RUN --mount=type=cache,target=/root/.m2 \

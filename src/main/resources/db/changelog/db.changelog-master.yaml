@@ -7,3 +7,9 @@ databaseChangeLog:
       file: db/changelog/migrations/003_category_create_table.sql
   - include:
       file: db/changelog/migrations/004_item_create_table.sql
+  - include:
+      file: db/changelog/migrations/005_item_category_create_table.sql
+  - include:
+      file: db/changelog/migrations/006_jsonschema_extension.sql
+  - include:
+      file: db/changelog/migrations/007_item_json_validation.sql

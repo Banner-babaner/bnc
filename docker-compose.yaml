@@ -18,7 +18,7 @@ services:
 
   db:
     build:
-      context: .
+      context: ./postgresql_extended_image
       dockerfile: Dockerfile.postgres
     volumes:
       - pg_data:/var/lib/postgresql

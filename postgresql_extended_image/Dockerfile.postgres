@@ -28,8 +28,4 @@ WORKDIR /tmp/pg_jsonschema
 
 RUN cargo pgrx install --release --pg-config /usr/bin/pg_config
 
-#RUN rm -rf /tmp/pg_jsonschema && \
-#    cargo uninstall cargo-pgrx && \
-#    rm -rf /root/.cargo
-
 WORKDIR /
