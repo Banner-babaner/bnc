@@ -27,3 +27,25 @@ databaseChangeLog:
       file: db/changelog/migrations/013_item_advertisement_application_create_table.sql
   - include:
       file: db/changelog/migrations/014_item_sale_offer_create_table.sql
+  - include:
+      file: db/changelog/migrations/015_recipe_create_table.sql
+  - include:
+      file: db/changelog/migrations/016_research_create_table.sql
+  - include:
+      file: db/changelog/migrations/017_recipe_research_create_table.sql
+  - include:
+      file: db/changelog/migrations/018_previous_research_create_table.sql
+  - include:
+      file: db/changelog/migrations/019_app_user_create_table.sql
+  - include:
+      file: db/changelog/migrations/020_inventory_stage_create_table.sql
+  - include:
+      file: db/changelog/migrations/021_user_inventory_create_table.sql
+  - include:
+      file: db/changelog/migrations/022_production_chain_create_table.sql
+  - include:
+      file: db/changelog/migrations/023_production_chain_knot_create_table.sql
+  - include:
+      file: db/changelog/migrations/024_production_chain_knot_source_create_table.sql
+  - include:
+      file: db/changelog/migrations/025_sign_up_application_create_table.sql
